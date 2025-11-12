@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" />
+  <link rel="shortcut icon" type="image/png" href="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | Lepton Actuarial Kenya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --primary: #0a4083;
+      --primary-light: #0d5ab0;
+      --primary-dark: #073066;
+      --secondary: #ffffff;
+      --accent-orange: #f15a29;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-600: #4b5563;
+      --gray-900: #111827;
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--gray-900);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 1000;
+    }
+    
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      gap: 3rem;
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .logo img {
+      height: 48px;
+      width: auto;
+    }
+    
+    .brand-divider {
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+    }
+    
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .brand-text .tagline {
+      font-size: 0.75rem;
+      color: var(--gray-600);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .brand-text .motto {
+      font-size: 0.875rem;
+      color: var(--primary);
+      font-weight: 600;
+      font-style: italic;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    
+    .nav-links a {
+      color: var(--gray-900);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    
+    .cta-btn {
+      padding: 0.875rem 2rem;
+      background: var(--accent-orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(241, 90, 41, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    
+    .cta-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(241, 90, 41, 0.4);
+    }
+    
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .services-hero {
+      margin-top: 85px;
+      background: linear-gradient(135deg, #0a4083 0%, #0d5ab0 50%, #073066 100%);
+      padding: 8rem 0 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
+      opacity: 0.6;
+    }
+    
+    .services-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .services-hero h1 {
+      font-size: 4rem;
+      color: white;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .services-hero p {
+      font-size: 1.375rem;
+      color: rgba(255,255,255,0.95);
+      max-width: 750px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Services Grid */
+    .services-section {
+      padding: 6rem 0;
+      background: white;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(10, 64, 131, 0.2);
+      border-color: var(--primary);
+    }
+    
+    .service-header {
+      padding: 3rem 2rem 2rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .service-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+    
+    .service-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    .service-header h3 {
+      font-size: 1.75rem;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+    
+    .service-subtitle {
+      opacity: 0.95;
+      font-size: 0.9375rem;
+    }
+    
+    .service-body {
+      padding: 2rem;
+    }
+    
+    .service-description {
+      color: var(--gray-600);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+    
+    .service-features {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+    
+    .service-features li {
+      padding: 0.75rem 0;
+      color: var(--gray-600);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    
+    .service-features li i {
+      color: var(--accent-orange);
+      margin-top: 0.25rem;
+      flex-shrink: 0;
+    }
+    
+    .service-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .service-cta:hover {
+      background: var(--accent-orange);
+      transform: translateX(5px);
+    }
+    
+    /* Process Section */
+    .process-section {
+      padding: 6rem 0;
+      background: var(--gray-50);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-header h2 {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .section-header p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .process-step {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .process-step:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(10, 64, 131, 0.15);
+    }
+    
+    .step-number {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--accent-orange), #d94d1f);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 15px rgba(241, 90, 41, 0.4);
+    }
+    
+    .process-step i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    
+    .process-step h3 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .process-step p {
+      color: var(--gray-600);
+      line-height: 1.7;
+      font-size: 0.9375rem;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+      opacity: 0.3;
+    }
+    
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+    }
+    
+    .cta-content h2 {
+      font-size: 3rem;
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta-content p {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+    
+    .btn-primary {
+      background: var(--accent-orange);
+      color: white;
+      box-shadow: 0 4px 20px rgba(241, 90, 41, 0.3);
+    }
+    
+    .btn-primary:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(241, 90, 41, 0.4);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border-color: rgba(255,255,255,0.5);
+    }
+    
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+      border-color: white;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-col h3 {
+      font-family: "Inter", sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    
+    .footer-col p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--accent-orange);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.875rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .brand-text, .brand-divider {
+        display: none;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+    .cta-btn {
+      padding: 0.875rem 2rem;
+      background: var(--accent-orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(241, 90, 41, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    
+    .cta-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(241, 90, 41, 0.4);
+    }
+    
+
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .services-hero {
+        padding: 5rem 0 4rem;
+      }
+      
+      .services-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-content h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo-section">
+          <a href="index.html" class="logo">
+            <img src="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" alt="Lepton Actuarial" />
+          </a>
+          <div class="brand-divider"></div>
+          <div class="brand-text">
+            <span class="tagline">Excellence in Actuarial Science</span>
+            <span class="motto">Managed Risks, Sustainable Outcomes</span>
+          </div>
+        </div>
+        
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html" class="active">Services</a>
+          <a href="insights.html">Insights</a>
+          <a href="blogs.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        
+        <a href="request-demo.html" class="cta-btn">
+          <i class="fas fa-rocket"></i>
+          Request Demo
+        </a>
+        
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="services-hero">
+    <div class="container">
+      <h1>Specialized Actuarial Solutions</h1>
+      <p>
+        Tailored analytics and strategic consulting to navigate Kenya's complex financial risks and opportunities.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Core Services</h2>
+        <p>Comprehensive actuarial expertise tailored for Kenya's insurance and financial sectors</p>
+      </div>
+      
+      <div class="services-grid">
+        <!-- Service 1: Actuarial Consulting -->
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon">📊</div>
+            <h3>Actuarial Consulting</h3>
+            <p class="service-subtitle">Advanced risk assessment and financial modeling</p>
+          </div>
+          <div class="service-body">
+            <p class="service-description">
+              Expert actuarial solutions tailored to Kenya's insurance industry, ensuring compliance with IRA regulations while maximizing profitability.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> Life & General Insurance Valuations</li>
+              <li><i class="fas fa-check-circle"></i> IFRS 17 Implementation & Compliance</li>
+              <li><i class="fas fa-check-circle"></i> Capital Adequacy & Solvency Analysis</li>
+              <li><i class="fas fa-check-circle"></i> Product Pricing & Profitability</li>
+              <li><i class="fas fa-check-circle"></i> Reinsurance Optimization</li>
+            </ul>
+            <a href="contact.html" class="service-cta">
+              Get Started
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 2: Sustainable Finance -->
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon">🌱</div>
+            <h3>Sustainable Finance</h3>
+            <p class="service-subtitle">ESG integration and climate risk modeling</p>
+          </div>
+          <div class="service-body">
+            <p class="service-description">
+              Pioneer sustainable investment strategies aligned with Kenya's Vision 2030 and global ESG standards.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> ESG Risk Assessment</li>
+              <li><i class="fas fa-check-circle"></i> Climate Change Impact Analysis</li>
+              <li><i class="fas fa-check-circle"></i> Green Bond Structuring</li>
+              <li><i class="fas fa-check-circle"></i> Sustainable Investment Portfolio Design</li>
+              <li><i class="fas fa-check-circle"></i> Regulatory ESG Reporting</li>
+            </ul>
+            <a href="contact.html" class="service-cta">
+              Get Started
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 3: Healthcare Analytics -->
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon">🏥</div>
+            <h3>Healthcare Analytics</h3>
+            <p class="service-subtitle">Medical schemes valuation and optimization</p>
+          </div>
+          <div class="service-body">
+            <p class="service-description">
+              Comprehensive actuarial services for Kenya's healthcare sector, from NHIF to private medical schemes.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> Medical Scheme Valuations</li>
+              <li><i class="fas fa-check-circle"></i> Health Insurance Product Design</li>
+              <li><i class="fas fa-check-circle"></i> Claims Trend Analysis</li>
+              <li><i class="fas fa-check-circle"></i> Provider Network Optimization</li>
+              <li><i class="fas fa-check-circle"></i> Universal Health Coverage (UHC) Modeling</li>
+            </ul>
+            <a href="contact.html" class="service-cta">
+              Get Started
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 4: Data Analytics -->
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon">📈</div>
+            <h3>Data Analytics & AI</h3>
+            <p class="service-subtitle">Machine learning for predictive insights</p>
+          </div>
+          <div class="service-body">
+            <p class="service-description">
+              Transform raw data into actionable intelligence using cutting-edge AI and machine learning technologies.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> Predictive Modeling & Forecasting</li>
+              <li><i class="fas fa-check-circle"></i> Customer Segmentation & Analytics</li>
+              <li><i class="fas fa-check-circle"></i> Fraud Detection Systems</li>
+              <li><i class="fas fa-check-circle"></i> Business Intelligence Dashboards</li>
+              <li><i class="fas fa-check-circle"></i> Big Data Infrastructure Setup</li>
+            </ul>
+            <a href="contact.html" class="service-cta">
+              Get Started
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 5: Risk Management -->
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon">🛡️</div>
+            <h3>Enterprise Risk Management</h3>
+            <p class="service-subtitle">Holistic risk frameworks and governance</p>
+          </div>
+          <div class="service-body">
+            <p class="service-description">
+              Comprehensive ERM solutions aligned with Kenya's regulatory requirements and international best practices.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> Risk Framework Development</li>
+              <li><i class="fas fa-check-circle"></i> Stress Testing & Scenario Analysis</li>
+              <li><i class="fas fa-check-circle"></i> Operational Risk Assessment</li>
+              <li><i class="fas fa-check-circle"></i> Cyber Risk Quantification</li>
+              <li><i class="fas fa-check-circle"></i> Board Risk Reporting</li>
+            </ul>
+            <a href="contact.html" class="service-cta">
+              Get Started
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Service 6: Pension Advisory -->
+        <div class="service-card">
+          <div class="service-header">
+            <div class="service-icon">💼</div>
+            <h3>Pension Advisory</h3>
+            <p class="service-subtitle">Retirement benefits consulting</p>
+          </div>
+          <div class="service-body">
+            <p class="service-description">
+              Expert guidance for pension schemes, trustees, and corporate sponsors navigating Kenya's retirement benefits landscape.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> Pension Scheme Valuations</li>
+              <li><i class="fas fa-check-circle"></i> Scheme Design & Restructuring</li>
+              <li><i class="fas fa-check-circle"></i> RBA Compliance Support</li>
+              <li><i class="fas fa-check-circle"></i> Investment Strategy Advisory</li>
+              <li><i class="fas fa-check-circle"></i> Member Benefit Statements</li>
+            </ul>
+            <a href="contact.html" class="service-cta">
+              Get Started
+              <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Engagement Process</h2>
+        <p>A structured approach ensuring exceptional results for Kenyan clients</p>
+      </div>
+      
+      <div class="process-grid">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <i class="fas fa-comments"></i>
+          <h3>Initial Consultation</h3>
+          <p>We understand your unique challenges and objectives through in-depth discussions.</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <i class="fas fa-clipboard-list"></i>
+          <h3>Scope Definition</h3>
+          <p>Clear project scope, deliverables, and timelines tailored to your needs.</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <i class="fas fa-chart-line"></i>
+          <h3>Analysis & Modeling</h3>
+          <p>Rigorous data analysis and actuarial modeling using proven methodologies.</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <i class="fas fa-presentation"></i>
+          <h3>Insights Delivery</h3>
+          <p>Clear, actionable recommendations presented to key stakeholders.</p>
+        </div>
+        
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <i class="fas fa-hands-helping"></i>
+          <h3>Implementation Support</h3>
+          <p>Ongoing guidance to ensure successful implementation of recommendations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Transform Your Risk Management?</h2>
+        <p>Partner with Kenya's leading actuarial consultancy for data-driven solutions.</p>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn btn-primary">
+            Schedule a Consultation
+            <i class="fas fa-calendar-check"></i>
+          </a>
+          <a href="about.html" class="btn btn-outline">
+            Learn More About Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Lepton Actuarial</h3>
+          <p>Pioneering data-driven actuarial solutions for Kenya and East Africa's financial and healthcare systems.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html">Actuarial Consulting</a></li>
+            <li><a href="services.html">Sustainable Finance</a></li>
+            <li><a href="services.html">Healthcare Analytics</a></li>
+            <li><a href="services.html">Data Analytics</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Our Team</a></li>
+            <li><a href="contact.html">Careers</a></li>
+            <li><a href="insights.html">Insights</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@leptonacturial.com">hello@leptonacturial.com</a></li>
+            <li><a href="tel:+254712345678">+254 712 345 678</a></li>
+            <li><a href="contact.html">Westlands, Nairobi<br>Kenya</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 Lepton Actuarial. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+    
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, index * 100);
+        }
+      });
+    }, observerOptions);
+    
+    // Observe service cards
+    document.querySelectorAll('.service-card, .process-step').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'all 0.6s ease-out';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

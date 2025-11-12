@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" />
+  <link rel="shortcut icon" type="image/png" href="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Lepton Actuarial Kenya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --primary: #0a4083;
+      --primary-light: #0d5ab0;
+      --primary-dark: #073066;
+      --secondary: #ffffff;
+      --accent-orange: #f15a29;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-600: #4b5563;
+      --gray-900: #111827;
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--gray-900);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 1000;
+    }
+    
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      gap: 3rem;
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .logo img {
+      height: 48px;
+      width: auto;
+    }
+    
+    .brand-divider {
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+    }
+    
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .brand-text .tagline {
+      font-size: 0.75rem;
+      color: var(--gray-600);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .brand-text .motto {
+      font-size: 0.875rem;
+      color: var(--primary);
+      font-weight: 600;
+      font-style: italic;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    
+    .nav-links a {
+      color: var(--gray-900);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    
+    .cta-btn {
+      padding: 0.875rem 2rem;
+      background: var(--accent-orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(241, 90, 41, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    
+    .cta-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(241, 90, 41, 0.4);
+    }
+    
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .contact-hero {
+      margin-top: 85px;
+      background: linear-gradient(135deg, #0a4083 0%, #0d5ab0 50%, #073066 100%);
+      padding: 8rem 0 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
+      opacity: 0.6;
+    }
+    
+    .contact-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .contact-hero h1 {
+      font-size: 4rem;
+      color: white;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .contact-hero p {
+      font-size: 1.375rem;
+      color: rgba(255,255,255,0.95);
+      max-width: 750px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Contact Section */
+    .contact-section {
+      padding: 6rem 0;
+      background: white;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      margin-top: 3rem;
+    }
+    
+    /* Contact Info Cards */
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .info-card {
+      background: var(--gray-50);
+      padding: 2rem;
+      border-radius: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+    
+    .info-card:hover {
+      background: white;
+      border-color: var(--primary);
+      box-shadow: 0 8px 30px rgba(10, 64, 131, 0.1);
+      transform: translateX(5px);
+    }
+    
+    .info-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    
+    .info-content h3 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .info-content p {
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    
+    .info-content a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .info-content a:hover {
+      color: var(--accent-orange);
+    }
+    
+    /* Contact Form */
+    .contact-form {
+      background: var(--gray-50);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    
+    .form-header {
+      margin-bottom: 2rem;
+    }
+    
+    .form-header h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-header p {
+      color: var(--gray-600);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      border: 2px solid var(--gray-200);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: "Inter", sans-serif;
+      transition: var(--transition);
+      background: white;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(10, 64, 131, 0.1);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      padding: 1.25rem 2rem;
+      background: var(--accent-orange);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    
+    .submit-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(241, 90, 41, 0.4);
+    }
+    
+    /* Map Section */
+    .map-section {
+      padding: 0;
+      height: 500px;
+      background: var(--gray-100);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .map-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+      color: var(--gray-600);
+      font-size: 1.25rem;
+    }
+    
+    /* Office Hours */
+    .office-hours {
+      background: var(--primary-dark);
+      color: white;
+      padding: 4rem 0;
+    }
+    
+    .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .hours-card {
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .hours-card h3 {
+      font-family: "Inter", sans-serif;
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+    
+    .hours-list {
+      list-style: none;
+    }
+    
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.9);
+    }
+    
+    .hours-list li:last-child {
+      border-bottom: none;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-col h3 {
+      font-family: "Inter", sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    
+    .footer-col p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--accent-orange);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.875rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .brand-text, .brand-divider {
+        display: none;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+    .cta-btn {
+      padding: 0.875rem 2rem;
+      background: var(--accent-orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(241, 90, 41, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    
+    .cta-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(241, 90, 41, 0.4);
+    }
+    
+
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .contact-hero {
+        padding: 5rem 0 4rem;
+      }
+      
+      .contact-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      
+      .map-section {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo-section">
+          <a href="index.html" class="logo">
+            <img src="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" alt="Lepton Actuarial" />
+          </a>
+          <div class="brand-divider"></div>
+          <div class="brand-text">
+            <span class="tagline">Excellence in Actuarial Science</span>
+            <span class="motto">Managed Risks, Sustainable Outcomes</span>
+          </div>
+        </div>
+        
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="insights.html">Insights</a>
+          <a href="blogs.html">Blog</a>
+          <a href="contact.html" class="active">Contact</a>
+        </div>
+        
+        <a href="request-demo.html" class="cta-btn">
+          <i class="fas fa-rocket"></i>
+          Request Demo
+        </a>
+        
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <p>
+        Let's discuss how Lepton Actuarial can help transform your risk management and data analytics strategies.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-content">
+              <h3>Our Office</h3>
+              <p>
+                Westlands Business Park<br>
+                Waiyaki Way, Westlands<br>
+                Nairobi, Kenya
+              </p>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="info-content">
+              <h3>Phone</h3>
+              <p>
+                Main: <a href="tel:+254712345678">+254 712 345 678</a><br>
+                Alt: <a href="tel:+254722345678">+254 722 345 678</a>
+              </p>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="info-content">
+              <h3>Email</h3>
+              <p>
+                General: <a href="mailto:hello@leptonactuarial.com">hello@leptonactuarial.com</a><br>
+                Careers: <a href="mailto:careers@leptonactuarial.com">careers@leptonactuarial.com</a>
+              </p>
+            </div>
+          </div>
+          
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="info-content">
+              <h3>Business Hours</h3>
+              <p>
+                Monday - Friday: 8:00 AM - 5:00 PM<br>
+                Saturday: 9:00 AM - 1:00 PM<br>
+                Sunday: Closed
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <div class="form-header">
+            <h2>Send Us a Message</h2>
+            <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+          </div>
+          
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+254..." />
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="company">Company / Organization</label>
+              <input type="text" id="company" name="company" />
+            </div>
+            
+            <div class="form-group">
+              <label for="service">Service Interest</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option value="actuarial">Actuarial Consulting</option>
+                <option value="sustainable">Sustainable Finance</option>
+                <option value="healthcare">Healthcare Analytics</option>
+                <option value="data">Data Analytics & AI</option>
+                <option value="risk">Enterprise Risk Management</option>
+                <option value="pension">Pension Advisory</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us about your project or inquiry..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+              Send Message
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="map-section">
+    <div class="map-placeholder">
+      <div style="text-align: center;">
+        <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem; display: block;"></i>
+        <p>Westlands Business Park, Nairobi, Kenya</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Office Hours Detail -->
+  <section class="office-hours">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; color: white; margin-bottom: 1rem;">Visit Our Office</h2>
+        <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem;">We're conveniently located in Westlands, Nairobi</p>
+      </div>
+      
+      <div class="hours-grid">
+        <div class="hours-card">
+          <h3><i class="fas fa-calendar-week"></i> Operating Hours</h3>
+          <ul class="hours-list">
+            <li><span>Monday</span><span>8:00 AM - 5:00 PM</span></li>
+            <li><span>Tuesday</span><span>8:00 AM - 5:00 PM</span></li>
+            <li><span>Wednesday</span><span>8:00 AM - 5:00 PM</span></li>
+            <li><span>Thursday</span><span>8:00 AM - 5:00 PM</span></li>
+            <li><span>Friday</span><span>8:00 AM - 5:00 PM</span></li>
+            <li><span>Saturday</span><span>9:00 AM - 1:00 PM</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+          </ul>
+        </div>
+        
+        <div class="hours-card">
+          <h3><i class="fas fa-car"></i> Getting Here</h3>
+          <ul class="hours-list">
+            <li>By Car: Ample parking available</li>
+            <li>By Matatu: Route 46, 125, 106</li>
+            <li>Nearest Landmark: Westlands Roundabout</li>
+            <li>Approximate Distance: 10km from CBD</li>
+          </ul>
+        </div>
+        
+        <div class="hours-card">
+          <h3><i class="fas fa-info-circle"></i> Important Notes</h3>
+          <ul class="hours-list">
+            <li>Appointments recommended</li>
+            <li>Free consultation available</li>
+            <li>Virtual meetings supported</li>
+            <li>Response time: Within 24 hours</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Lepton Actuarial</h3>
+          <p>Pioneering data-driven actuarial solutions for Kenya and East Africa's financial and healthcare systems.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html">Actuarial Consulting</a></li>
+            <li><a href="services.html">Sustainable Finance</a></li>
+            <li><a href="services.html">Healthcare Analytics</a></li>
+            <li><a href="services.html">Data Analytics</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Our Team</a></li>
+            <li><a href="contact.html">Careers</a></li>
+            <li><a href="insights.html">Insights</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@leptonacturial.com">hello@leptonacturial.com</a></li>
+            <li><a href="tel:+254712345678">+254 712 345 678</a></li>
+            <li><a href="contact.html">Westlands, Nairobi<br>Kenya</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 Lepton Actuarial. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+    
+    // Form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+      
+      // Simple validation
+      if (!data.firstName || !data.lastName || !data.email || !data.message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // Simulate form submission
+      const submitBtn = this.querySelector('.submit-btn');
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      submitBtn.disabled = true;
+      
+      // Simulate API call
+      setTimeout(() => {
+        alert('Thank you for contacting us! We\'ll get back to you within 24 hours.');
+        this.reset();
+        submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+        submitBtn.disabled = false;
+      }, 1500);
+    });
+    
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    // Observe info cards
+    document.querySelectorAll('.info-card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s ease-out';
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>

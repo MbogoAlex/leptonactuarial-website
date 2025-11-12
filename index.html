@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" />
+  <link rel="shortcut icon" type="image/png" href="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lepton Actuarial | Data-Driven Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --primary: #0a4083;
+      --primary-light: #0d5ab0;
+      --primary-dark: #073066;
+      --secondary: #ffffff;
+      --accent-orange: #f15a29;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-600: #4b5563;
+      --gray-900: #111827;
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--gray-900);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 1000;
+    }
+    
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      gap: 3rem;
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .logo img {
+      height: 48px;
+      width: auto;
+    }
+    
+    .brand-divider {
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+    }
+    
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .brand-text .tagline {
+      font-size: 0.75rem;
+      color: var(--gray-600);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .brand-text .motto {
+      font-size: 0.875rem;
+      color: var(--primary);
+      font-weight: 600;
+      font-style: italic;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    
+    .nav-links a {
+      color: var(--gray-900);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    
+    .cta-btn {
+      padding: 0.875rem 2rem;
+      background: var(--accent-orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(241, 90, 41, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    
+    .cta-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(241, 90, 41, 0.4);
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      margin-top: 85px;
+      background: linear-gradient(135deg, #0a4083 0%, #0d5ab0 50%, #073066 100%);
+      padding: 8rem 0 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
+      opacity: 0.6;
+    }
+    
+    /* Floating Animated Icons */
+    .floating-icons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    
+    .floating-icon {
+      position: absolute;
+      font-size: 2.5rem;
+      color: rgba(255, 255, 255, 0.15);
+      animation: float 20s infinite ease-in-out;
+    }
+    
+    .floating-icon:nth-child(1) {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+      animation-duration: 25s;
+    }
+    
+    .floating-icon:nth-child(2) {
+      top: 60%;
+      left: 85%;
+      animation-delay: 3s;
+      animation-duration: 30s;
+    }
+    
+    .floating-icon:nth-child(3) {
+      top: 80%;
+      left: 20%;
+      animation-delay: 6s;
+      animation-duration: 28s;
+    }
+    
+    .floating-icon:nth-child(4) {
+      top: 30%;
+      left: 75%;
+      animation-delay: 9s;
+      animation-duration: 26s;
+    }
+    
+    .floating-icon:nth-child(5) {
+      top: 50%;
+      left: 50%;
+      animation-delay: 12s;
+      animation-duration: 32s;
+    }
+    
+    .floating-icon:nth-child(6) {
+      top: 15%;
+      left: 60%;
+      animation-delay: 15s;
+      animation-duration: 27s;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.15;
+      }
+      25% {
+        transform: translate(30px, -50px) rotate(5deg);
+        opacity: 0.25;
+      }
+      50% {
+        transform: translate(-20px, -100px) rotate(-5deg);
+        opacity: 0.15;
+      }
+      75% {
+        transform: translate(40px, -70px) rotate(3deg);
+        opacity: 0.2;
+      }
+    }
+    
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 4rem;
+      color: white;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .hero p {
+      font-size: 1.375rem;
+      color: rgba(255,255,255,0.95);
+      max-width: 750px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.8;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1.25rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease-out 0.4s both;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Stats Counter Section */
+    .stats-section {
+      padding: 4rem 0;
+      background: white;
+      position: relative;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      text-align: center;
+    }
+    
+    .stat-item {
+      padding: 2rem;
+      position: relative;
+    }
+    
+    .stat-icon {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: "Playfair Display", serif;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      color: var(--gray-600);
+      font-weight: 600;
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+    
+    @keyframes countUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Data Visualization Animation */
+    .data-viz {
+      position: relative;
+      height: 300px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      gap: 1rem;
+      padding: 2rem;
+      background: var(--gray-50);
+      border-radius: 16px;
+      margin: 3rem 0;
+    }
+    
+    .data-bar {
+      flex: 1;
+      background: linear-gradient(to top, var(--primary), var(--primary-light));
+      border-radius: 8px 8px 0 0;
+      position: relative;
+      animation: growUp 1.5s ease-out forwards;
+      transform-origin: bottom;
+      opacity: 0;
+    }
+    
+    .data-bar:nth-child(1) {
+      animation-delay: 0.2s;
+      height: 60%;
+    }
+    
+    .data-bar:nth-child(2) {
+      animation-delay: 0.4s;
+      height: 85%;
+    }
+    
+    .data-bar:nth-child(3) {
+      animation-delay: 0.6s;
+      height: 70%;
+    }
+    
+    .data-bar:nth-child(4) {
+      animation-delay: 0.8s;
+      height: 95%;
+    }
+    
+    .data-bar:nth-child(5) {
+      animation-delay: 1s;
+      height: 78%;
+    }
+    
+    @keyframes growUp {
+      from {
+        transform: scaleY(0);
+        opacity: 0;
+      }
+      to {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+    
+    /* Features Section with Icons */
+    .features-section {
+      padding: 5rem 0;
+      background: white;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+    
+    .feature-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      border-radius: 16px;
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+    
+    .feature-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-10px);
+      box-shadow: 0 12px 40px rgba(10, 64, 131, 0.1);
+    }
+    
+    .feature-icon-wrapper {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      animation: rotate 20s linear infinite;
+    }
+    
+    .feature-icon-wrapper::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-orange), var(--primary-light));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .feature-card:hover .feature-icon-wrapper::before {
+      opacity: 1;
+    }
+    
+    .feature-icon {
+      font-size: 2rem;
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+    
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    
+    .feature-card h3 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+    
+    .feature-card p {
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    
+    /* Process Flow Animation */
+    .process-section {
+      padding: 6rem 0;
+      background: white;
+      position: relative;
+    }
+    
+    .process-timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 4rem auto;
+    }
+    
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--primary), var(--primary-light), var(--accent-orange));
+      transform: translateX(-50%);
+    }
+    
+    .process-step {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4rem;
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+    
+    .process-step.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .process-step:nth-child(odd) {
+      flex-direction: row;
+    }
+    
+    .process-step:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    
+    .process-content {
+      flex: 1;
+      padding: 2rem;
+      background: var(--gray-50);
+      border-radius: 16px;
+      position: relative;
+    }
+    
+    .process-step:nth-child(odd) .process-content {
+      margin-right: calc(50% + 40px);
+      text-align: right;
+    }
+    
+    .process-step:nth-child(even) .process-content {
+      margin-left: calc(50% + 40px);
+      text-align: left;
+    }
+    
+    .process-number {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 1.5rem;
+      box-shadow: 0 8px 25px rgba(10, 64, 131, 0.3);
+      z-index: 2;
+      animation: pulse-ring 2s infinite;
+    }
+    
+    @keyframes pulse-ring {
+      0% {
+        box-shadow: 0 0 0 0 rgba(10, 64, 131, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 20px rgba(10, 64, 131, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(10, 64, 131, 0);
+      }
+    }
+    
+    .process-content h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+    
+    .process-content p {
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    
+    .process-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2.25rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+    
+    .btn-primary {
+      background: var(--accent-orange);
+      color: white;
+      box-shadow: 0 4px 20px rgba(241, 90, 41, 0.3);
+    }
+    
+    .btn-primary:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(241, 90, 41, 0.4);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.4);
+    }
+    
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+      border-color: white;
+    }
+    
+    /* Services Section */
+    .services {
+      padding: 6rem 0;
+      background: var(--gray-50);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-header h2 {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .section-header p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: var(--transition);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(10, 64, 131, 0.15);
+    }
+    
+    .service-image {
+      height: 240px;
+      overflow: hidden;
+    }
+    
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    
+    .service-card:hover .service-image img {
+      transform: scale(1.1);
+    }
+    
+    .service-content {
+      padding: 2rem;
+    }
+    
+    .service-content h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+    
+    .service-content p {
+      color: var(--gray-600);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    
+    .service-link {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+    
+    .service-link:hover {
+      gap: 0.75rem;
+      color: var(--primary-light);
+    }
+    
+    /* Clients Section */
+    .clients {
+      padding: 5rem 0;
+      background: white;
+    }
+    
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 3rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    
+    .client-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.6;
+      transition: var(--transition);
+    }
+    
+    .client-logo:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    
+    .client-logo img {
+      max-width: 140px;
+      height: auto;
+      filter: grayscale(100%);
+      transition: var(--transition);
+    }
+    
+    .client-logo:hover img {
+      filter: grayscale(0%);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-col h3 {
+      font-family: "Inter", sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    
+    .footer-col p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--accent-orange);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.875rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .brand-text {
+        display: none;
+      }
+      
+      .brand-divider {
+        display: none;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .hero {
+        padding: 5rem 0 4rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.125rem;
+      }
+      
+      .section-header h2 {
+        font-size: 2.25rem;
+      }
+      
+      .floating-icon {
+        font-size: 1.5rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+      
+      .stat-number {
+        font-size: 2.5rem;
+      }
+      
+      .feature-icon-wrapper {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .feature-icon {
+        font-size: 1.5rem;
+      }
+      
+      .process-timeline::before {
+        left: 30px;
+      }
+      
+      .process-step {
+        flex-direction: column !important;
+        padding-left: 60px;
+      }
+      
+      .process-step:nth-child(odd) .process-content,
+      .process-step:nth-child(even) .process-content {
+        margin: 0;
+        text-align: left;
+      }
+      
+      .process-number {
+        left: 30px;
+        transform: translateX(0);
+      }
+      
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .section-header h2 {
+        font-size: 1.875rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo-section">
+          <a href="index.html" class="logo">
+            <img src="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" alt="Lepton Actuarial" />
+          </a>
+          <div class="brand-divider"></div>
+          <div class="brand-text">
+            <span class="tagline">Excellence in Actuarial Science</span>
+            <span class="motto">Managed Risks, Sustainable Outcomes</span>
+          </div>
+        </div>
+        
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="insights.html">Insights</a>
+          <a href="blogs.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        
+        <a href="request-demo.html" class="cta-btn">
+          <i class="fas fa-rocket"></i>
+          Request Demo
+        </a>
+        
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <!-- Floating Actuarial Icons -->
+    <div class="floating-icons">
+      <div class="floating-icon">📊</div>
+      <div class="floating-icon">💹</div>
+      <div class="floating-icon">📈</div>
+      <div class="floating-icon">🎯</div>
+      <div class="floating-icon">⚖️</div>
+      <div class="floating-icon">💼</div>
+    </div>
+    
+    <div class="container">
+      <h1>Transform Risk into Strategic Advantage</h1>
+      <p>
+        Leading actuarial excellence in Kenya. Cutting-edge solutions powered by advanced analytics, 
+        sustainable finance principles, and deep understanding of the East African market.
+      </p>
+      <div class="hero-buttons">
+        <a href="services.html" class="btn btn-primary">
+          Explore Our Services
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="contact.html" class="btn btn-outline">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Counter Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="stat-number" data-target="500">0</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-project-diagram"></i>
+          </div>
+          <div class="stat-number" data-target="1200">0</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-award"></i>
+          </div>
+          <div class="stat-number" data-target="15">0</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="stat-number" data-target="98">0</div>
+          <div class="stat-label">% Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Choose Lepton Actuarial</h2>
+        <p>Comprehensive expertise backed by cutting-edge technology and proven methodologies</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="fas fa-brain feature-icon"></i>
+          </div>
+          <h3>Advanced Analytics</h3>
+          <p>Leverage AI and machine learning for predictive modeling and risk assessment</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="fas fa-shield-alt feature-icon"></i>
+          </div>
+          <h3>Risk Management</h3>
+          <p>Comprehensive frameworks to identify, assess, and mitigate financial risks</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="fas fa-leaf feature-icon"></i>
+          </div>
+          <h3>ESG Integration</h3>
+          <p>Sustainable finance strategies aligned with environmental and social goals</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="fas fa-chart-pie feature-icon"></i>
+          </div>
+          <h3>Data Visualization</h3>
+          <p>Transform complex data into clear, actionable insights and reports</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="fas fa-handshake feature-icon"></i>
+          </div>
+          <h3>Regulatory Compliance</h3>
+          <p>Stay ahead with IRA Kenya requirements, IFRS 17, and regional regulatory standards</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <i class="fas fa-cogs feature-icon"></i>
+          </div>
+          <h3>Process Optimization</h3>
+          <p>Streamline operations and reduce costs through data-driven efficiency</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Specialized Solutions for Kenya</h2>
+        <p>Comprehensive actuarial services tailored to Kenya's unique regulatory and market challenges</p>
+      </div>
+      
+      <div class="services-grid">
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Actuarial Consulting" />
+          </div>
+          <div class="service-content">
+            <h3>Actuarial Consulting</h3>
+            <p>Advanced predictive modeling and risk assessment for insurance and financial sectors.</p>
+            <a href="services.html#actuarial" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sustainable Finance" />
+          </div>
+          <div class="service-content">
+            <h3>Sustainable Finance</h3>
+            <p>ESG integration and climate risk modeling for responsible investment strategies.</p>
+            <a href="services.html#finance" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data Analytics" />
+          </div>
+          <div class="service-content">
+            <h3>Data Analytics</h3>
+            <p>Transform raw data into actionable intelligence for strategic decision-making.</p>
+            <a href="services.html#dataanalysis" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div class="service-image">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Healthcare Analytics" />
+          </div>
+          <div class="service-content">
+            <h3>Healthcare Analytics</h3>
+            <p>Leverage data to improve patient outcomes and operational efficiency.</p>
+            <a href="services.html#healthcare" class="service-link">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Proven Process</h2>
+        <p>A systematic approach to delivering exceptional actuarial solutions</p>
+      </div>
+      
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="process-number">1</div>
+          <div class="process-content">
+            <div class="process-icon">🔍</div>
+            <h3>Discovery & Assessment</h3>
+            <p>Deep dive into your business challenges, data landscape, and strategic objectives through collaborative workshops with your Kenyan team and stakeholders.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="process-number">2</div>
+          <div class="process-content">
+            <div class="process-icon">📊</div>
+            <h3>Data Analysis & Modeling</h3>
+            <p>Comprehensive analysis of historical data, development of predictive models, and scenario testing using advanced statistical techniques.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="process-number">3</div>
+          <div class="process-content">
+            <div class="process-icon">⚙️</div>
+            <h3>Solution Development</h3>
+            <p>Custom actuarial frameworks tailored to Kenyan regulations, incorporating IRA requirements and regional best practices.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="process-number">4</div>
+          <div class="process-content">
+            <div class="process-icon">🚀</div>
+            <h3>Implementation & Training</h3>
+            <p>Seamless integration with your systems, comprehensive team training, and change management support for smooth adoption.</p>
+          </div>
+        </div>
+        
+        <div class="process-step">
+          <div class="process-number">5</div>
+          <div class="process-content">
+            <div class="process-icon">📈</div>
+            <h3>Monitoring & Optimization</h3>
+            <p>Ongoing performance tracking, model validation, and continuous improvement to ensure long-term success and ROI.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Metrics Visualization -->
+  <section class="impact-section" style="padding: 5rem 0; background: linear-gradient(135deg, var(--primary-dark), var(--primary)); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); opacity: 0.3;"></div>
+    
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="section-header" style="color: white;">
+        <h2 style="color: white;">Our Impact Across Kenya</h2>
+        <p style="color: rgba(255,255,255,0.9);">Real results from actuarial excellence serving Kenya and East Africa</p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+          <div style="font-size: 3.5rem; margin-bottom: 1rem;">📊</div>
+          <div style="font-size: 2.5rem; font-weight: 800; color: white; font-family: 'Playfair Display', serif; margin-bottom: 0.5rem;">KES 180B+</div>
+          <div style="color: rgba(255,255,255,0.9); font-weight: 600;">Assets Under Analysis</div>
+        </div>
+        
+        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+          <div style="font-size: 3.5rem; margin-bottom: 1rem;">🎯</div>
+          <div style="font-size: 2.5rem; font-weight: 800; color: white; font-family: 'Playfair Display', serif; margin-bottom: 0.5rem;">35%</div>
+          <div style="color: rgba(255,255,255,0.9); font-weight: 600;">Average Risk Reduction</div>
+        </div>
+        
+        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+          <div style="font-size: 3.5rem; margin-bottom: 1rem;">💼</div>
+          <div style="font-size: 2.5rem; font-weight: 800; color: white; font-family: 'Playfair Display', serif; margin-bottom: 0.5rem;">50+</div>
+          <div style="color: rgba(255,255,255,0.9); font-weight: 600;">Leading Organizations</div>
+        </div>
+        
+        <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.2);">
+          <div style="font-size: 3.5rem; margin-bottom: 1rem;">🌍</div>
+          <div style="font-size: 2.5rem; font-weight: 800; color: white; font-family: 'Playfair Display', serif; margin-bottom: 0.5rem;">East Africa</div>
+          <div style="color: rgba(255,255,255,0.9); font-weight: 600;">Regional Coverage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <section class="clients">
+    <div class="container">
+      <div class="section-header">
+        <h2>Trusted by Kenya's Industry Leaders</h2>
+        <p>Partnering with leading Kenyan and East African organizations committed to innovation and sustainability</p>
+      </div>
+      
+      <div class="clients-grid">
+        <div class="client-logo">
+          <img src="https://leptonactuarial.com/wp-content/uploads/2024/06/affiliations1-300x169.webp" alt="Client Logo" />
+        </div>
+        <div class="client-logo">
+          <img src="https://leptonactuarial.com/wp-content/uploads/2024/06/affiliations4-300x191.webp" alt="Client Logo" />
+        </div>
+        <div class="client-logo">
+          <img src="https://leptonactuarial.com/wp-content/uploads/2024/06/affiliations2-300x265.webp" alt="Client Logo" />
+        </div>
+        <div class="client-logo">
+          <img src="https://leptonactuarial.com/wp-content/uploads/2024/06/affiliations3-300x244.webp" alt="Client Logo" />
+        </div>
+        <div class="client-logo">
+          <img src="https://leptonactuarial.com/wp-content/uploads/2024/06/affiliations6-300x105.webp" alt="Client Logo" />
+        </div>
+        <div class="client-logo">
+          <img src="https://leptonactuarial.com/wp-content/uploads/2024/06/affiliations5-300x215.webp" alt="Client Logo" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Lepton Actuarial</h3>
+          <p>Pioneering data-driven actuarial solutions for Kenya and East Africa's financial and healthcare systems.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html">Actuarial Consulting</a></li>
+            <li><a href="services.html">Sustainable Finance</a></li>
+            <li><a href="services.html">Healthcare Analytics</a></li>
+            <li><a href="services.html">Data Analytics</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Our Team</a></li>
+            <li><a href="contact.html">Careers</a></li>
+            <li><a href="insights.html">Insights</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@leptonacturial.com">hello@leptonacturial.com</a></li>
+            <li><a href="tel:+254712345678">+254 712 345 678</a></li>
+            <li><a href="contact.html">Westlands, Nairobi<br>Kenya</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 Lepton Actuarial. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+    
+    // Animated Counter
+    function animateCounter(element) {
+      const target = parseInt(element.getAttribute('data-target'));
+      const duration = 2000; // 2 seconds
+      const increment = target / (duration / 16); // 60fps
+      let current = 0;
+      
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          element.textContent = Math.floor(current);
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = target;
+        }
+      };
+      
+      updateCounter();
+    }
+    
+    // Intersection Observer for counter animation
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: '0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counters = entry.target.querySelectorAll('.stat-number');
+          counters.forEach(counter => {
+            if (counter.textContent === '0') {
+              animateCounter(counter);
+            }
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    // Observe stats section
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+      observer.observe(statsSection);
+    }
+    
+    // Service cards scroll animation
+    const serviceCards = document.querySelectorAll('.service-card, .feature-card');
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, index * 100);
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    serviceCards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s ease-out';
+      cardObserver.observe(card);
+    });
+    
+    // Parallax effect for floating icons
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const floatingIcons = document.querySelectorAll('.floating-icon');
+      floatingIcons.forEach((icon, index) => {
+        const speed = 0.5 + (index * 0.1);
+        icon.style.transform = `translateY(${scrolled * speed}px)`;
+      });
+    });
+    
+    // Add smooth reveal animation to sections
+    const sections = document.querySelectorAll('section');
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+    
+    // Process timeline animation
+    const processSteps = document.querySelectorAll('.process-step');
+    const processObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 200);
+        }
+      });
+    }, { threshold: 0.3 });
+    
+    processSteps.forEach(step => {
+      processObserver.observe(step);
+    });
+    
+    // Add tilt effect to feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+      });
+    });
+  </script>
+</body>
+</html>

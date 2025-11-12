@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" />
+  <link rel="shortcut icon" type="image/png" href="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Lepton Actuarial Kenya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --primary: #0a4083;
+      --primary-light: #0d5ab0;
+      --primary-dark: #073066;
+      --secondary: #ffffff;
+      --accent-orange: #f15a29;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-600: #4b5563;
+      --gray-900: #111827;
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--gray-900);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 1000;
+    }
+    
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      gap: 3rem;
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .logo img {
+      height: 48px;
+      width: auto;
+    }
+    
+    .brand-divider {
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+    }
+    
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .brand-text .tagline {
+      font-size: 0.75rem;
+      color: var(--gray-600);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .brand-text .motto {
+      font-size: 0.875rem;
+      color: var(--primary);
+      font-weight: 600;
+      font-style: italic;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    
+    .nav-links a {
+      color: var(--gray-900);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    
+    .cta-btn {
+      padding: 0.875rem 2rem;
+      background: var(--accent-orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(241, 90, 41, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    
+    .cta-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(241, 90, 41, 0.4);
+    }
+    
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .about-hero {
+      margin-top: 85px;
+      background: linear-gradient(135deg, #0a4083 0%, #0d5ab0 50%, #073066 100%);
+      padding: 8rem 0 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
+      opacity: 0.6;
+    }
+    
+    .about-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .about-hero h1 {
+      font-size: 4rem;
+      color: white;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .about-hero p {
+      font-size: 1.375rem;
+      color: rgba(255,255,255,0.95);
+      max-width: 750px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Story Section */
+    .story-section {
+      padding: 6rem 0;
+      background: white;
+    }
+    
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .story-image {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(10, 64, 131, 0.15);
+    }
+    
+    .story-image img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    
+    .story-image:hover img {
+      transform: scale(1.05);
+    }
+    
+    .story-content h2 {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .story-content p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+    
+    .highlight-box {
+      background: var(--gray-50);
+      border-left: 4px solid var(--accent-orange);
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
+    
+    .highlight-box p {
+      margin: 0;
+      font-style: italic;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    
+    /* Values Section */
+    .values-section {
+      padding: 6rem 0;
+      background: var(--gray-50);
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    
+    .section-header h2 {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .section-header p {
+      font-size: 1.125rem;
+      color: var(--gray-600);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .value-card {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+    
+    .value-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+      box-shadow: 0 12px 40px rgba(10, 64, 131, 0.15);
+    }
+    
+    .value-icon {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    .value-card h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .value-card p {
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    
+    /* Team Section */
+    .team-section {
+      padding: 6rem 0;
+      background: white;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+    
+    .team-member {
+      text-align: center;
+      transition: var(--transition);
+    }
+    
+    .team-photo {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      position: relative;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+    
+    .team-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    
+    .team-member:hover .team-photo img {
+      transform: scale(1.1);
+    }
+    
+    .team-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(10, 64, 131, 0.9), transparent);
+      padding: 2rem 1rem 1rem;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    
+    .team-member:hover .team-overlay {
+      transform: translateY(0);
+    }
+    
+    .team-social {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+    }
+    
+    .team-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .team-social a:hover {
+      background: var(--accent-orange);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    .team-member h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .team-role {
+      color: var(--accent-orange);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    
+    .team-bio {
+      color: var(--gray-600);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+    
+    /* Timeline Section */
+    .timeline-section {
+      padding: 6rem 0;
+      background: var(--gray-50);
+    }
+    
+    .timeline {
+      max-width: 900px;
+      margin: 3rem auto;
+      position: relative;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--primary), var(--accent-orange));
+      transform: translateX(-50%);
+    }
+    
+    .timeline-item {
+      display: flex;
+      margin-bottom: 3rem;
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+    .timeline-item:nth-child(4) { animation-delay: 0.8s; }
+    .timeline-item:nth-child(5) { animation-delay: 1s; }
+    
+    .timeline-item:nth-child(odd) {
+      flex-direction: row;
+    }
+    
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    
+    .timeline-content {
+      flex: 1;
+      padding: 2rem;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content {
+      margin-right: calc(50% + 30px);
+      text-align: right;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-left: calc(50% + 30px);
+      text-align: left;
+    }
+    
+    .timeline-date {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      box-shadow: 0 8px 25px rgba(10, 64, 131, 0.3);
+      z-index: 2;
+    }
+    
+    .timeline-year {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+    
+    .timeline-content h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+    
+    .timeline-content p {
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2.25rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+    
+    .btn-primary {
+      background: var(--accent-orange);
+      color: white;
+      box-shadow: 0 4px 20px rgba(241, 90, 41, 0.3);
+    }
+    
+    .btn-primary:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(241, 90, 41, 0.4);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-col h3 {
+      font-family: "Inter", sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    
+    .footer-col p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--accent-orange);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.875rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .brand-text, .brand-divider {
+        display: none;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+    .cta-btn {
+      padding: 0.875rem 2rem;
+      background: var(--accent-orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(241, 90, 41, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    
+    .cta-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(241, 90, 41, 0.4);
+    }
+    
+
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .about-hero {
+        padding: 5rem 0 4rem;
+      }
+      
+      .about-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .story-image img {
+        height: 400px;
+      }
+      
+      .timeline::before {
+        left: 30px;
+      }
+      
+      .timeline-item {
+        flex-direction: column !important;
+        padding-left: 60px;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-content {
+        margin: 0;
+        text-align: left;
+      }
+      
+      .timeline-date {
+        left: 30px;
+        transform: translateX(0);
+        width: 80px;
+        height: 80px;
+      }
+      
+      .timeline-year {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo-section">
+          <a href="index.html" class="logo">
+            <img src="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" alt="Lepton Actuarial" />
+          </a>
+          <div class="brand-divider"></div>
+          <div class="brand-text">
+            <span class="tagline">Excellence in Actuarial Science</span>
+            <span class="motto">Managed Risks, Sustainable Outcomes</span>
+          </div>
+        </div>
+        
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="services.html">Services</a>
+          <a href="insights.html">Insights</a>
+          <a href="blogs.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        
+        <a href="request-demo.html" class="cta-btn">
+          <i class="fas fa-rocket"></i>
+          Request Demo
+        </a>
+        
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="container">
+      <h1>Pioneering Actuarial Excellence in Kenya</h1>
+      <p>
+        Since 2010, we've been transforming complex data into strategic solutions for Kenya's sustainable future.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="story-section">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-image">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Lepton Team Collaborating" />
+        </div>
+        <div class="story-content">
+          <h2>Our Journey</h2>
+          <p>
+            Founded by a team of Kenyan actuarial experts, Lepton Actuarial began with a simple mission: 
+            to bridge the gap between traditional actuarial science and emerging sustainability challenges 
+            in East Africa. What started as a boutique consultancy has grown into Kenya's leading actuarial firm.
+          </p>
+          <p>
+            Today, we combine decades of actuarial expertise with cutting-edge machine learning to solve 
+            problems others consider intractable. Our work has been recognized by the Insurance Regulatory 
+            Authority (IRA) Kenya and featured in leading East African business publications.
+          </p>
+          <div class="highlight-box">
+            <p>
+              "Our commitment is to empower Kenyan businesses with world-class actuarial insights 
+              that drive sustainable growth and financial resilience."
+            </p>
+          </div>
+          <a href="services.html" class="btn btn-primary">
+            Explore Our Solutions
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="values-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Core Values</h2>
+        <p>The principles that guide every decision we make</p>
+      </div>
+      
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🔍</div>
+          <h3>Analytical Rigor</h3>
+          <p>We apply the highest standards of mathematical and statistical precision to every analysis, ensuring our insights are built on solid foundations.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">🌱</div>
+          <h3>Sustainability Focus</h3>
+          <p>Every recommendation considers long-term environmental and social impact, aligning financial success with Kenya's sustainable development goals.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h3>Client Partnership</h3>
+          <p>We don't just deliver reports—we build lasting relationships, working alongside our Kenyan clients as trusted advisors and strategic partners.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">💡</div>
+          <h3>Innovation</h3>
+          <p>Blending traditional actuarial wisdom with modern data science, AI, and machine learning to pioneer new solutions for East African markets.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h3>Integrity</h3>
+          <p>Transparency and ethical practice are non-negotiable. Our reputation is built on honest, unbiased advice that serves our clients' best interests.</p>
+        </div>
+        
+        <div class="value-card">
+          <div class="value-icon">🌍</div>
+          <h3>Local Expertise</h3>
+          <p>Deep understanding of Kenya's regulatory environment, market dynamics, and cultural context informs every solution we deliver.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="timeline-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Milestone Journey</h2>
+        <p>Over a decade of growth, innovation, and impact in Kenya</p>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <span class="timeline-year">2010</span>
+          </div>
+          <div class="timeline-content">
+            <h3>🚀 Foundation</h3>
+            <p>Lepton Actuarial established in Nairobi with a vision to transform Kenya's actuarial landscape through data-driven innovation.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <span class="timeline-year">2013</span>
+          </div>
+          <div class="timeline-content">
+            <h3>🏆 First Major Win</h3>
+            <p>Secured partnership with leading Kenyan insurance companies, delivering groundbreaking risk assessment models.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <span class="timeline-year">2016</span>
+          </div>
+          <div class="timeline-content">
+            <h3>🌍 Regional Expansion</h3>
+            <p>Expanded services across East Africa, becoming the go-to actuarial consultancy for sustainable finance projects.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <span class="timeline-year">2019</span>
+          </div>
+          <div class="timeline-content">
+            <h3>💻 Tech Innovation</h3>
+            <p>Launched proprietary AI-powered risk modeling platform, revolutionizing how Kenyan firms approach actuarial analysis.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">
+            <span class="timeline-year">2023</span>
+          </div>
+          <div class="timeline-content">
+            <h3>🎯 Industry Leadership</h3>
+            <p>Recognized by IRA Kenya as a leading actuarial consultancy. Served 50+ major organizations with KES 180B+ in assets analyzed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="team-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Meet Our Leadership</h2>
+        <p>A team of certified actuaries and data scientists driving innovation</p>
+      </div>
+      
+      <div class="team-grid">
+        <div class="team-member">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CEO" />
+            <div class="team-overlay">
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <h3>Abdi Hassan</h3>
+          <div class="team-role">CEO & Chief Actuary</div>
+          <p class="team-bio">Fellow of the Institute of Actuaries with 20+ years experience in East African insurance markets.</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="CTO" />
+            <div class="team-overlay">
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <h3>Achieng Otieno</h3>
+          <div class="team-role">Chief Data Scientist</div>
+          <p class="team-bio">PhD in Applied Mathematics, pioneering AI applications in actuarial science for African markets.</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Director" />
+            <div class="team-overlay">
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <h3>Omar Mohamed</h3>
+          <div class="team-role">Director, Risk Advisory</div>
+          <p class="team-bio">Certified Enterprise Risk Manager with expertise in ESG integration and climate risk modeling.</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="team-photo">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Manager" />
+            <div class="team-overlay">
+              <div class="team-social">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <h3>Chebet Korir</h3>
+          <div class="team-role">Senior Healthcare Actuary</div>
+          <p class="team-bio">Specialist in medical schemes valuation and healthcare analytics for Kenya's insurance sector.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Lepton Actuarial</h3>
+          <p>Pioneering data-driven actuarial solutions for Kenya and East Africa's financial and healthcare systems.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html">Actuarial Consulting</a></li>
+            <li><a href="services.html">Sustainable Finance</a></li>
+            <li><a href="services.html">Healthcare Analytics</a></li>
+            <li><a href="services.html">Data Analytics</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Our Team</a></li>
+            <li><a href="contact.html">Careers</a></li>
+            <li><a href="insights.html">Insights</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@leptonacturial.com">hello@leptonacturial.com</a></li>
+            <li><a href="tel:+254712345678">+254 712 345 678</a></li>
+            <li><a href="contact.html">Westlands, Nairobi<br>Kenya</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 Lepton Actuarial. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+    
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    // Observe elements for animation
+    document.querySelectorAll('.value-card, .team-member').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'all 0.6s ease-out';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

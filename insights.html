@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" />
+  <link rel="shortcut icon" type="image/png" href="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insights & Research | Lepton Actuarial Kenya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --primary: #0a4083;
+      --primary-light: #0d5ab0;
+      --primary-dark: #073066;
+      --secondary: #ffffff;
+      --accent-orange: #f15a29;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-600: #4b5563;
+      --gray-900: #111827;
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--gray-900);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 1000;
+    }
+    
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      gap: 3rem;
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .logo img {
+      height: 48px;
+      width: auto;
+    }
+    
+    .brand-divider {
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+    }
+    
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .brand-text .tagline {
+      font-size: 0.75rem;
+      color: var(--gray-600);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .brand-text .motto {
+      font-size: 0.875rem;
+      color: var(--primary);
+      font-weight: 600;
+      font-style: italic;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    
+    .nav-links a {
+      color: var(--gray-900);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    
+    .cta-btn {
+      padding: 0.875rem 2rem;
+      background: var(--accent-orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(241, 90, 41, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    
+    .cta-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(241, 90, 41, 0.4);
+    }
+    
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .insights-hero {
+      margin-top: 85px;
+      background: linear-gradient(135deg, #0a4083 0%, #0d5ab0 50%, #073066 100%);
+      padding: 8rem 0 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .insights-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
+      opacity: 0.6;
+    }
+    
+    .insights-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .insights-hero h1 {
+      font-size: 4rem;
+      color: white;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .insights-hero p {
+      font-size: 1.375rem;
+      color: rgba(255,255,255,0.95);
+      max-width: 750px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Filter Section */
+    .filter-section {
+      padding: 3rem 0;
+      background: white;
+      border-bottom: 1px solid var(--gray-200);
+      position: sticky;
+      top: 85px;
+      z-index: 100;
+    }
+    
+    .filter-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 0.75rem 1.75rem;
+      border: 2px solid var(--gray-200);
+      background: white;
+      color: var(--gray-600);
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .filter-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    
+    .filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    
+    /* Insights Grid */
+    .insights-section {
+      padding: 5rem 0;
+      background: var(--gray-50);
+    }
+    
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    
+    .insight-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .insight-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(10, 64, 131, 0.15);
+    }
+    
+    .insight-image {
+      height: 240px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .insight-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    
+    .insight-card:hover .insight-image img {
+      transform: scale(1.1);
+    }
+    
+    .insight-category {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--accent-orange);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .insight-content {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .insight-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      color: var(--gray-600);
+      font-size: 0.875rem;
+    }
+    
+    .insight-meta i {
+      color: var(--primary);
+    }
+    
+    .insight-title {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    
+    .insight-excerpt {
+      color: var(--gray-600);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      flex: 1;
+    }
+    
+    .insight-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--gray-200);
+    }
+    
+    .insight-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+    }
+    
+    .author-info {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .author-name {
+      font-weight: 600;
+      color: var(--gray-900);
+      font-size: 0.875rem;
+    }
+    
+    .author-role {
+      font-size: 0.75rem;
+      color: var(--gray-600);
+    }
+    
+    .read-more {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: var(--transition);
+    }
+    
+    .read-more:hover {
+      color: var(--accent-orange);
+      gap: 0.75rem;
+    }
+    
+    /* Newsletter Section */
+    .newsletter-section {
+      padding: 5rem 0;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .newsletter-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+      opacity: 0.3;
+    }
+    
+    .newsletter-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-content h2 {
+      font-size: 2.5rem;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    
+    .newsletter-content p {
+      font-size: 1.125rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.95;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-input {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      outline: none;
+    }
+    
+    .newsletter-btn {
+      padding: 1rem 2.5rem;
+      background: var(--accent-orange);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    
+    .newsletter-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--primary-dark);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-col h3 {
+      font-family: "Inter", sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    
+    .footer-col p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--accent-orange);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.875rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .brand-text, .brand-divider {
+        display: none;
+      }
+      
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+      
+      .nav-links.show {
+        display: flex;
+      }
+      
+    .cta-btn {
+      padding: 0.875rem 2rem;
+      background: var(--accent-orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(241, 90, 41, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    
+    .cta-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(241, 90, 41, 0.4);
+    }
+    
+
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .insights-hero {
+        padding: 5rem 0 4rem;
+      }
+      
+      .insights-hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .insights-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo-section">
+          <a href="index.html" class="logo">
+            <img src="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" alt="Lepton Actuarial" />
+          </a>
+          <div class="brand-divider"></div>
+          <div class="brand-text">
+            <span class="tagline">Excellence in Actuarial Science</span>
+            <span class="motto">Managed Risks, Sustainable Outcomes</span>
+          </div>
+        </div>
+        
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="insights.html" class="active">Insights</a>
+          <a href="blogs.html">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        
+        <a href="request-demo.html" class="cta-btn">
+          <i class="fas fa-rocket"></i>
+          Request Demo
+        </a>
+        
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="insights-hero">
+    <div class="container">
+      <h1>Actuarial Intelligence</h1>
+      <p>
+        Cutting-edge research, industry trends, and data-driven perspectives from Kenya's leading actuarial experts.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Insights</button>
+        <button class="filter-btn" data-filter="research">Research Papers</button>
+        <button class="filter-btn" data-filter="articles">Articles</button>
+        <button class="filter-btn" data-filter="case-studies">Case Studies</button>
+        <button class="filter-btn" data-filter="industry">Industry Trends</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insights Grid -->
+  <section class="insights-section">
+    <div class="container">
+      <div class="insights-grid">
+        <!-- Insight 1 -->
+        <article class="insight-card" data-category="research">
+          <div class="insight-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Climate Risk" />
+            <span class="insight-category">Research</span>
+          </div>
+          <div class="insight-content">
+            <div class="insight-meta">
+              <span><i class="far fa-calendar"></i> Nov 10, 2025</span>
+              <span><i class="far fa-clock"></i> 8 min read</span>
+            </div>
+            <h3 class="insight-title">Climate Risk Modeling for Kenyan Insurance Sector</h3>
+            <p class="insight-excerpt">
+              Comprehensive analysis of climate change impacts on Kenya's insurance industry, with predictive models for agricultural and property insurance.
+            </p>
+            <div class="insight-footer">
+              <div class="insight-author">
+                <div class="author-avatar">AH</div>
+                <div class="author-info">
+                  <div class="author-name">Abdi Hassan</div>
+                  <div class="author-role">Chief Actuary</div>
+                </div>
+              </div>
+              <a href="#" class="read-more">
+                Read More <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Insight 2 -->
+        <article class="insight-card" data-category="articles">
+          <div class="insight-image">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="IFRS 17" />
+            <span class="insight-category">Article</span>
+          </div>
+          <div class="insight-content">
+            <div class="insight-meta">
+              <span><i class="far fa-calendar"></i> Nov 5, 2025</span>
+              <span><i class="far fa-clock"></i> 6 min read</span>
+            </div>
+            <h3 class="insight-title">IFRS 17 Implementation: Kenya's Journey</h3>
+            <p class="insight-excerpt">
+              Practical insights on implementing IFRS 17 standards in Kenya's insurance market, including IRA regulatory requirements and best practices.
+            </p>
+            <div class="insight-footer">
+              <div class="insight-author">
+                <div class="author-avatar">AO</div>
+                <div class="author-info">
+                  <div class="author-name">Achieng Otieno</div>
+                  <div class="author-role">Data Scientist</div>
+                </div>
+              </div>
+              <a href="#" class="read-more">
+                Read More <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Insight 3 -->
+        <article class="insight-card" data-category="case-studies">
+          <div class="insight-image">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Medical Schemes" />
+            <span class="insight-category">Case Study</span>
+          </div>
+          <div class="insight-content">
+            <div class="insight-meta">
+              <span><i class="far fa-calendar"></i> Oct 28, 2025</span>
+              <span><i class="far fa-clock"></i> 10 min read</span>
+            </div>
+            <h3 class="insight-title">Optimizing Medical Scheme Sustainability</h3>
+            <p class="insight-excerpt">
+              How we helped a major Kenyan corporate medical scheme reduce costs by 25% while improving member benefits through advanced analytics.
+            </p>
+            <div class="insight-footer">
+              <div class="insight-author">
+                <div class="author-avatar">CK</div>
+                <div class="author-info">
+                  <div class="author-name">Chebet Korir</div>
+                  <div class="author-role">Healthcare Actuary</div>
+                </div>
+              </div>
+              <a href="#" class="read-more">
+                Read More <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Insight 4 -->
+        <article class="insight-card" data-category="industry">
+          <div class="insight-image">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ESG Investing" />
+            <span class="insight-category">Industry Trends</span>
+          </div>
+          <div class="insight-content">
+            <div class="insight-meta">
+              <span><i class="far fa-calendar"></i> Oct 20, 2025</span>
+              <span><i class="far fa-clock"></i> 7 min read</span>
+            </div>
+            <h3 class="insight-title">ESG Investing in East Africa</h3>
+            <p class="insight-excerpt">
+              Analysis of sustainable investment trends in Kenya and East Africa, with insights on green bonds and impact investing opportunities.
+            </p>
+            <div class="insight-footer">
+              <div class="insight-author">
+                <div class="author-avatar">OM</div>
+                <div class="author-info">
+                  <div class="author-name">Omar Mohamed</div>
+                  <div class="author-role">Risk Director</div>
+                </div>
+              </div>
+              <a href="#" class="read-more">
+                Read More <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Insight 5 -->
+        <article class="insight-card" data-category="research">
+          <div class="insight-image">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pension Schemes" />
+            <span class="insight-category">Research</span>
+          </div>
+          <div class="insight-content">
+            <div class="insight-meta">
+              <span><i class="far fa-calendar"></i> Oct 15, 2025</span>
+              <span><i class="far fa-clock"></i> 9 min read</span>
+            </div>
+            <h3 class="insight-title">Kenya's Pension Landscape 2025</h3>
+            <p class="insight-excerpt">
+              Comprehensive analysis of Kenya's retirement benefits sector, RBA regulatory changes, and investment strategies for optimal member outcomes.
+            </p>
+            <div class="insight-footer">
+              <div class="insight-author">
+                <div class="author-avatar">AH</div>
+                <div class="author-info">
+                  <div class="author-name">Abdi Hassan</div>
+                  <div class="author-role">Chief Actuary</div>
+                </div>
+              </div>
+              <a href="#" class="read-more">
+                Read More <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Insight 6 -->
+        <article class="insight-card" data-category="articles">
+          <div class="insight-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI in Actuarial" />
+            <span class="insight-category">Article</span>
+          </div>
+          <div class="insight-content">
+            <div class="insight-meta">
+              <span><i class="far fa-calendar"></i> Oct 8, 2025</span>
+              <span><i class="far fa-clock"></i> 5 min read</span>
+            </div>
+            <h3 class="insight-title">AI & Machine Learning in Actuarial Science</h3>
+            <p class="insight-excerpt">
+              How artificial intelligence is revolutionizing actuarial work in Kenya, from pricing algorithms to fraud detection systems.
+            </p>
+            <div class="insight-footer">
+              <div class="insight-author">
+                <div class="author-avatar">AO</div>
+                <div class="author-info">
+                  <div class="author-name">Achieng Otieno</div>
+                  <div class="author-role">Data Scientist</div>
+                </div>
+              </div>
+              <a href="#" class="read-more">
+                Read More <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2>Stay Informed</h2>
+        <p>Get the latest actuarial insights, research, and industry trends delivered to your inbox.</p>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address" required />
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Lepton Actuarial</h3>
+          <p>Pioneering data-driven actuarial solutions for Kenya and East Africa's financial and healthcare systems.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html">Actuarial Consulting</a></li>
+            <li><a href="services.html">Sustainable Finance</a></li>
+            <li><a href="services.html">Healthcare Analytics</a></li>
+            <li><a href="services.html">Data Analytics</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Our Team</a></li>
+            <li><a href="contact.html">Careers</a></li>
+            <li><a href="insights.html">Insights</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@leptonacturial.com">hello@leptonacturial.com</a></li>
+            <li><a href="tel:+254712345678">+254 712 345 678</a></li>
+            <li><a href="contact.html">Westlands, Nairobi<br>Kenya</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 Lepton Actuarial. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+    
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const insightCards = document.querySelectorAll('.insight-card');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        const filter = btn.getAttribute('data-filter');
+        
+        insightCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 10);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+    
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, index * 100);
+        }
+      });
+    }, observerOptions);
+    
+    // Observe insight cards
+    insightCards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'all 0.6s ease-out';
+      observer.observe(card);
+    });
+    
+    // Newsletter form
+    document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for subscribing! We\'ll keep you updated with the latest insights.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

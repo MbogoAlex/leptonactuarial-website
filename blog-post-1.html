@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" />
+  <link rel="shortcut icon" type="image/png" href="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Climate Risk Modeling: Kenya's Insurance Sector | Lepton Actuarial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    :root {
+      --primary: #0a4083;
+      --primary-light: #0d5ab0;
+      --primary-dark: #073066;
+      --secondary: #ffffff;
+      --accent-orange: #f15a29;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-600: #4b5563;
+      --gray-900: #111827;
+      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--gray-900);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Header same as before... */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--gray-200);
+      z-index: 1000;
+    }
+    
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 0;
+      gap: 3rem;
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .logo img {
+      height: 48px;
+      width: auto;
+    }
+    
+    .brand-divider {
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+    }
+    
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .brand-text .tagline {
+      font-size: 0.75rem;
+      color: var(--gray-600);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .brand-text .motto {
+      font-size: 0.875rem;
+      color: var(--primary);
+      font-weight: 600;
+      font-style: italic;
+    }
+    
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    
+    .nav-links a {
+      color: var(--gray-900);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    
+    .cta-btn {
+      padding: 0.875rem 2rem;
+      background: var(--accent-orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(241, 90, 41, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    
+    .cta-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(241, 90, 41, 0.4);
+    }
+    
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+    
+    /* Blog Post */
+    .post-header {
+      margin-top: 85px;
+      padding: 4rem 0 2rem;
+      background: white;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      transition: var(--transition);
+    }
+    
+    .back-link:hover {
+      gap: 0.75rem;
+    }
+    
+    .post-category {
+      display: inline-block;
+      background: var(--accent-orange);
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    
+    .post-title {
+      font-size: 3.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--gray-200);
+    }
+    
+    .post-author-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .author-avatar-large {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    
+    .author-details h4 {
+      font-size: 1.125rem;
+      color: var(--gray-900);
+      margin-bottom: 0.25rem;
+    }
+    
+    .author-details p {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .post-stats {
+      display: flex;
+      gap: 1.5rem;
+      color: var(--gray-600);
+      font-size: 0.9375rem;
+    }
+    
+    .post-stats i {
+      color: var(--primary);
+    }
+    
+    .featured-image {
+      width: 100%;
+      height: 550px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 3rem;
+    }
+    
+    .featured-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .post-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+    
+    .post-content h2 {
+      font-size: 2.25rem;
+      color: var(--primary);
+      margin: 3rem 0 1.5rem;
+    }
+    
+    .post-content h3 {
+      font-size: 1.75rem;
+      color: var(--primary-dark);
+      margin: 2.5rem 0 1rem;
+    }
+    
+    .post-content p {
+      font-size: 1.125rem;
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+      color: var(--gray-900);
+    }
+    
+    .post-content ul, .post-content ol {
+      margin: 1.5rem 0;
+      padding-left: 2rem;
+    }
+    
+    .post-content li {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+    }
+    
+    .highlight-box {
+      background: var(--gray-50);
+      border-left: 4px solid var(--accent-orange);
+      padding: 2rem;
+      margin: 2.5rem 0;
+      border-radius: 8px;
+    }
+    
+    .highlight-box p {
+      margin: 0;
+      font-style: italic;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+    
+    /* Comments Section */
+    .comments-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 4rem 0;
+      border-top: 2px solid var(--gray-200);
+    }
+    
+    .comments-header {
+      margin-bottom: 3rem;
+    }
+    
+    .comments-header h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .comments-count {
+      color: var(--gray-600);
+      font-size: 1rem;
+    }
+    
+    .comment-form {
+      background: var(--gray-50);
+      padding: 2.5rem;
+      border-radius: 16px;
+      margin-bottom: 3rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      border: 2px solid var(--gray-200);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: "Inter", sans-serif;
+      transition: var(--transition);
+      background: white;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(10, 64, 131, 0.1);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    
+    .submit-btn {
+      padding: 1rem 2.5rem;
+      background: var(--accent-orange);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .submit-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(241, 90, 41, 0.4);
+    }
+    
+    .comments-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .comment {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      border: 2px solid var(--gray-200);
+      transition: var(--transition);
+    }
+    
+    .comment:hover {
+      border-color: var(--primary);
+      box-shadow: 0 4px 20px rgba(10, 64, 131, 0.08);
+    }
+    
+    .comment-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    
+    .comment-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .comment-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.125rem;
+    }
+    
+    .comment-author-info h4 {
+      font-size: 1rem;
+      color: var(--gray-900);
+      margin-bottom: 0.25rem;
+    }
+    
+    .comment-date {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+    
+    .comment-body {
+      color: var(--gray-900);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+    
+    .comment-actions {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--gray-200);
+    }
+    
+    .comment-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--gray-600);
+      font-size: 0.875rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .comment-action:hover {
+      color: var(--primary);
+    }
+    
+    /* Footer same as before... */
+    footer {
+      background: var(--primary-dark);
+      color: white;
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-col h3 {
+      font-family: "Inter", sans-serif;
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    
+    .footer-col p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--accent-orange);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.875rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .brand-text, .brand-divider {
+        display: none;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+    .cta-btn {
+      padding: 0.875rem 2rem;
+      background: var(--accent-orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(241, 90, 41, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      white-space: nowrap;
+    }
+    
+    .cta-btn:hover {
+      background: #d94d1f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(241, 90, 41, 0.4);
+    }
+    
+
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .post-title {
+        font-size: 2.5rem;
+      }
+      
+      .post-content h2 {
+        font-size: 1.75rem;
+      }
+      
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo-section">
+          <a href="index.html" class="logo">
+            <img src="https://leptonactuarial.com/wp-content/uploads/2024/06/cropped-cropped-lepton-logo.png" alt="Lepton Actuarial" />
+          </a>
+          <div class="brand-divider"></div>
+          <div class="brand-text">
+            <span class="tagline">Excellence in Actuarial Science</span>
+            <span class="motto">Managed Risks, Sustainable Outcomes</span>
+          </div>
+        </div>
+        
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="blogs.html" class="active">Blog</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        
+        <a href="request-demo.html" class="cta-btn">
+          <i class="fas fa-rocket"></i>
+          Request Demo
+        </a>
+        
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blog Post -->
+  <article class="post-header">
+    <div class="container">
+      <a href="blogs.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Blog
+      </a>
+      
+      <span class="post-category">Climate Risk</span>
+      <h1 class="post-title">Climate Risk Modeling: Kenya's Insurance Sector in 2025</h1>
+      
+      <div class="post-meta">
+        <div class="post-author-info">
+          <div class="author-avatar-large">AH</div>
+          <div class="author-details">
+            <h4>Abdi Hassan</h4>
+            <p>Chief Actuary • November 12, 2025</p>
+          </div>
+        </div>
+        
+        <div class="post-stats">
+          <span><i class="far fa-clock"></i> 10 min read</span>
+          <span><i class="far fa-eye"></i> 1,234 views</span>
+          <span><i class="far fa-comments"></i> 5 comments</span>
+        </div>
+      </div>
+      
+      <div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Climate Risk" />
+      </div>
+    </div>
+  </article>
+
+  <!-- Post Content -->
+  <section class="post-content">
+    <div class="container">
+      <p>
+        Climate change is no longer a distant threat—it's reshaping Kenya's insurance landscape in real-time. As the Chief Actuary at Lepton Actuarial, I've witnessed firsthand how unpredictable weather patterns are forcing insurers to completely rethink their risk assessment models.
+      </p>
+
+      <p>
+        In 2025, Kenya's insurance sector faces unprecedented challenges. From prolonged droughts affecting agricultural insurance to severe flooding impacting property coverage, the actuarial profession must evolve rapidly to keep pace with these changes.
+      </p>
+
+      <h2>The Current State of Climate Risk in Kenya</h2>
+
+      <p>
+        Recent data from the Kenya Meteorological Department shows a 35% increase in extreme weather events over the past five years. This translates directly into insurance claims, with agricultural insurance payouts rising by 42% year-over-year.
+      </p>
+
+      <div class="highlight-box">
+        <p>
+          "Traditional actuarial models that rely on historical data are becoming obsolete. We need forward-looking, climate-adjusted approaches that can anticipate rather than just respond to risk."
+        </p>
+      </div>
+
+      <h3>Key Findings from Our Research</h3>
+
+      <ul>
+        <li><strong>Agricultural Insurance:</strong> Crop failure rates have doubled in arid and semi-arid regions, forcing premium adjustments of 15-25%.</li>
+        <li><strong>Property Insurance:</strong> Flood-prone areas in Nairobi and coastal regions now require specialized underwriting approaches.</li>
+        <li><strong>Health Insurance:</strong> Climate-related diseases (malaria, waterborne illnesses) are creating new healthcare cost pressures.</li>
+        <li><strong>Reinsurance:</strong> Global reinsurers are reducing exposure to East Africa, driving up local retention requirements.</li>
+      </ul>
+
+      <h2>Advanced Modeling Techniques</h2>
+
+      <p>
+        At Lepton Actuarial, we've developed proprietary climate risk models that integrate machine learning with traditional actuarial science. Our models consider:
+      </p>
+
+      <ol>
+        <li>Historical weather pattern analysis using 30+ years of data</li>
+        <li>Climate projection models from IPCC and regional research institutions</li>
+        <li>Real-time satellite imagery for crop health monitoring</li>
+        <li>Socioeconomic factors affecting vulnerability and adaptation capacity</li>
+      </ol>
+
+      <p>
+        These models have helped Kenyan insurers improve pricing accuracy by 28% and reduce claim volatility by 19%.
+      </p>
+
+      <h2>Recommendations for Insurers</h2>
+
+      <p>
+        Based on our extensive analysis, we recommend that Kenyan insurers take the following steps:
+      </p>
+
+      <h3>1. Invest in Data Infrastructure</h3>
+      <p>
+        Modern climate risk assessment requires robust data collection systems. Insurers should partner with meteorological services, agricultural extension offices, and tech companies to build comprehensive datasets.
+      </p>
+
+      <h3>2. Adopt Dynamic Pricing Models</h3>
+      <p>
+        Static annual pricing is insufficient. Insurers need quarterly or even monthly adjustments based on evolving climate indicators and early warning systems.
+      </p>
+
+      <h3>3. Develop Climate-Resilient Products</h3>
+      <p>
+        Innovation is key. Parametric insurance, index-based products, and microinsurance can fill gaps left by traditional coverage.
+      </p>
+
+      <h2>The Role of Regulation</h2>
+
+      <p>
+        The Insurance Regulatory Authority (IRA) Kenya has been proactive in addressing climate risk. Recent guidelines require insurers to conduct annual climate stress tests and maintain additional capital buffers for extreme weather exposure.
+      </p>
+
+      <p>
+        However, more work is needed. We advocate for:
+      </p>
+
+      <ul>
+        <li>Standardized climate risk reporting frameworks</li>
+        <li>Public-private partnerships for climate data sharing</li>
+        <li>Tax incentives for climate-adaptive insurance products</li>
+        <li>Mandatory ESG disclosures for insurance companies</li>
+      </ul>
+
+      <h2>Looking Ahead</h2>
+
+      <p>
+        Climate risk modeling is not just about protecting insurers' balance sheets—it's about building financial resilience for all Kenyans. As weather patterns become more volatile, access to affordable, reliable insurance will be crucial for economic stability.
+      </p>
+
+      <p>
+        The actuarial profession has a responsibility to lead this transformation. By embracing new technologies, collaborating across sectors, and maintaining rigorous scientific standards, we can help Kenya's insurance industry not just survive but thrive in the face of climate change.
+      </p>
+
+      <div class="highlight-box">
+        <p>
+          "The future of insurance in Kenya depends on our ability to accurately price climate risk today. This is both our greatest challenge and our most important opportunity."
+        </p>
+      </div>
+
+      <p>
+        <em>Are you an insurer, regulator, or stakeholder interested in climate risk modeling? Reach out to our team at Lepton Actuarial for a consultation.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- Comments Section -->
+  <section class="comments-section">
+    <div class="container">
+      <div class="comments-header">
+        <h2>Discussion</h2>
+        <p class="comments-count">5 comments</p>
+      </div>
+
+      <!-- Comment Form -->
+      <div class="comment-form">
+        <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Leave a Comment</h3>
+        <form id="commentForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="comment">Comment *</label>
+            <textarea id="comment" required placeholder="Share your thoughts..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Post Comment</button>
+        </form>
+      </div>
+
+      <!-- Comments List -->
+      <div class="comments-list">
+        <!-- Comment 1 -->
+        <div class="comment">
+          <div class="comment-header">
+            <div class="comment-author">
+              <div class="comment-avatar">BO</div>
+              <div class="comment-author-info">
+                <h4>Brian Odhiambo</h4>
+                <span class="comment-date">November 12, 2025 at 3:45 PM</span>
+              </div>
+            </div>
+          </div>
+          <div class="comment-body">
+            <p>Excellent analysis, David! As someone working in agricultural insurance, I've seen these challenges firsthand. The 42% increase in payouts is actually conservative—some of our books have seen 50%+ increases in certain regions.</p>
+          </div>
+          <div class="comment-actions">
+            <span class="comment-action"><i class="far fa-thumbs-up"></i> Like (12)</span>
+            <span class="comment-action"><i class="far fa-reply"></i> Reply</span>
+          </div>
+        </div>
+
+        <!-- Comment 2 -->
+        <div class="comment">
+          <div class="comment-header">
+            <div class="comment-author">
+              <div class="comment-avatar">FJ</div>
+              <div class="comment-author-info">
+                <h4>Faith Jeptoo</h4>
+                <span class="comment-date">November 12, 2025 at 5:20 PM</span>
+              </div>
+            </div>
+          </div>
+          <div class="comment-body">
+            <p>This is timely research. I'd be interested to know more about the machine learning models you mentioned. Are they available for licensing to other actuarial firms?</p>
+          </div>
+          <div class="comment-actions">
+            <span class="comment-action"><i class="far fa-thumbs-up"></i> Like (8)</span>
+            <span class="comment-action"><i class="far fa-reply"></i> Reply</span>
+          </div>
+        </div>
+
+        <!-- Comment 3 -->
+        <div class="comment">
+          <div class="comment-header">
+            <div class="comment-author">
+              <div class="comment-avatar">DM</div>
+              <div class="comment-author-info">
+                <h4>David Mwangi</h4>
+                <span class="comment-date">November 12, 2025 at 7:15 PM</span>
+              </div>
+            </div>
+          </div>
+          <div class="comment-body">
+            <p>Great article! However, I think you could have explored the role of parametric insurance more. It's proving quite effective in Ethiopia and could work well in Kenya too.</p>
+          </div>
+          <div class="comment-actions">
+            <span class="comment-action"><i class="far fa-thumbs-up"></i> Like (5)</span>
+            <span class="comment-action"><i class="far fa-reply"></i> Reply</span>
+          </div>
+        </div>
+
+        <!-- Comment 4 -->
+        <div class="comment">
+          <div class="comment-header">
+            <div class="comment-author">
+              <div class="comment-avatar">LO</div>
+              <div class="comment-author-info">
+                <h4>Lucy Omondi</h4>
+                <span class="comment-date">November 13, 2025 at 9:30 AM</span>
+              </div>
+            </div>
+          </div>
+          <div class="comment-body">
+            <p>As a regulator at IRA, I appreciate the recognition of our climate stress testing requirements. We're always open to feedback on how to improve the regulatory framework. Let's continue this important conversation.</p>
+          </div>
+          <div class="comment-actions">
+            <span class="comment-action"><i class="far fa-thumbs-up"></i> Like (18)</span>
+            <span class="comment-action"><i class="far fa-reply"></i> Reply</span>
+          </div>
+        </div>
+
+        <!-- Comment 5 -->
+        <div class="comment">
+          <div class="comment-header">
+            <div class="comment-author">
+              <div class="comment-avatar">SK</div>
+              <div class="comment-author-info">
+                <h4>Samuel Kiprop</h4>
+                <span class="comment-date">November 13, 2025 at 2:10 PM</span>
+              </div>
+            </div>
+          </div>
+          <div class="comment-body">
+            <p>Insightful read! Would love to see a follow-up article on specific case studies of Kenyan insurers who have successfully implemented climate-adaptive models.</p>
+          </div>
+          <div class="comment-actions">
+            <span class="comment-action"><i class="far fa-thumbs-up"></i> Like (7)</span>
+            <span class="comment-action"><i class="far fa-reply"></i> Reply</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Lepton Actuarial</h3>
+          <p>Pioneering data-driven actuarial solutions for Kenya and East Africa's financial and healthcare systems.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="services.html">Actuarial Consulting</a></li>
+            <li><a href="services.html">Sustainable Finance</a></li>
+            <li><a href="services.html">Healthcare Analytics</a></li>
+            <li><a href="services.html">Data Analytics</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Our Team</a></li>
+            <li><a href="contact.html">Careers</a></li>
+            <li><a href="blogs.html">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@leptonacturial.com">hello@leptonacturial.com</a></li>
+            <li><a href="tel:+254712345678">+254 712 345 678</a></li>
+            <li><a href="contact.html">Westlands, Nairobi<br>Kenya</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 Lepton Actuarial. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+    
+    // Comment form submission
+    document.getElementById('commentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your comment! It will be published after moderation.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
